@@ -5,7 +5,7 @@ I'd like my bank account to show my balance.
 
 As a bank customer,
 So that I can use my account,
-I'd like to see be able to make a deposit
+I'd like to be able to make a deposit
 
 As a bank customer,
 So that I can use my account,
