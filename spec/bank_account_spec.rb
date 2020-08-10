@@ -1,9 +1,15 @@
 require '/bank_account'
 describe BankAccount do 
+  context 'initialisation of a new bank account' do
   it 'should be created with a starting balance of 0' do
     bankaccount = BankAccount.new
     expect(bankaccount.balance).to eq(0)
   end
+  it 'should have a tranaction history of an array containing 1 nested array of ["date", "credit", "debit", "balance"]' do
+    bankaccount = BankAccount.new
+    expect(bankaccount.transactions).to eq(["date", "credit", "debit", "balance"])
+  end
+end
   it 'bank account owner should make a deposit of £50 and see balance increase to £50' do
     bankaccount = BankAccount.new
     bankaccount.deposit(50)
