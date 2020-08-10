@@ -9,10 +9,17 @@ describe BankAccount do
     bankaccount.deposit(50)
     expect(bankaccount.balance).to eq(50)
   end
+  context 'withdrawal' do
   it 'bank account owner should make a withdrawal of £50 and see balance decrease to £50' do
     bankaccount = BankAccount.new
     bankaccount.deposit(50)
     bankaccount.withdraw(50)
     expect(bankaccount.balance).to eq(0)
   end
+  it 'bank account owner can only make a withdrawal if withdrawal amount < balance' do
+    bankaccount = BankAccount.new
+    bankaccount.withdraw(50)
+    expect(bankaccount.balance).to eq 0
+  end
+end
 end
