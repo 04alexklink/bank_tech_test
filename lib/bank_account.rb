@@ -11,7 +11,7 @@ class BankAccount
   end
 
   def withdraw(amount)
-    return if amount > @balance
+    raise "Your withdraw request is greater than your account balance. Please input a new withdrawal amount of #{balance} or less." if amount > @balance
     @balance -= amount
   end
 end
