@@ -20,6 +20,10 @@ describe BankAccount do
       bankaccount.deposit(50)
       expect(bankaccount.transactions[1]).to eq(["#{Time.new.strftime('%d/%m/%Y')}||      || 50|| 50"])
     end
+    it 'should only accept positive numerical values' do
+      expect { bankaccount.withdraw("notanumber") }.to raise_error("Invalid entry. Try again.")
+      expect { bankaccount.deposit(-20) }.to raise_error("Invalid entry. Try again.")
+    end
   end
   context 'withdrawal' do
     it 'bank account owner should make a withdrawal of £50 and see balance decrease to £50' do
@@ -35,6 +39,10 @@ describe BankAccount do
       bankaccount.deposit(50)
       bankaccount.withdraw(50)
       expect(bankaccount.transactions[2]).to eq(["#{Time.new.strftime('%d/%m/%Y')}||  50||     || 0"])
+    end
+    it 'should only accept positive numerical values' do
+      expect { bankaccount.withdraw("notanumber") }.to raise_error("Invalid entry. Try again.")
+      expect { bankaccount.withdraw(-20) }.to raise_error("Invalid entry. Try again.")
     end
   end
   context 'printstatement' do
