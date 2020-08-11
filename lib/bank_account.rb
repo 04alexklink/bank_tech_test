@@ -14,7 +14,7 @@ class BankAccount
 
   def withdraw(amount)
     raise "Invalid entry. Try again." unless amount.to_i.positive?
-    raise "Your withdraw request is greater than your account balance. Please input a new withdrawal amount of #{balance} or less." if amount > @balance
+    insufficient_funds_check(@balance, amount)
     @balance -= amount
     @transactions << ["#{Time.new.strftime("%d/%m/%Y")}||  #{amount}||     || #{@balance}"]
   end
@@ -23,5 +23,11 @@ class BankAccount
     @transactions.each do |transaction|
       puts transaction
     end
+  end
+
+  private
+
+  def insufficient_funds_check(balance, amount)
+    raise "Insufficient funds. Please input a new withdrawal amount of #{balance} or less." if amount > @balance
   end
 end

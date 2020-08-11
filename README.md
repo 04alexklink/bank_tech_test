@@ -18,6 +18,8 @@ I'd like to print my account statement
 
 -- Can only make a withdrawal if my account balance is greater than requested withdrawal amount
 -- Get an error message telling me my requested withdrawal amount is greater than my balance, and tells me what amount i can withdraw
+-- Get an error message if argument input for withdraw or deposit is not a positive number
+
 
 Deposits, withdrawal.
 Account statement (date, amount, balance) printing.
