@@ -7,13 +7,13 @@ class BankAccount
   end
 
   def deposit(amount)
-    raise "Invalid entry. Try again." unless amount.to_i.positive?
+    positive_number_check(amount)
     @balance += amount
     @transactions << ["#{Time.new.strftime("%d/%m/%Y")}||      || #{amount}|| #{@balance}"]
   end
 
   def withdraw(amount)
-    raise "Invalid entry. Try again." unless amount.to_i.positive?
+    positive_number_check(amount)
     insufficient_funds_check(@balance, amount)
     @balance -= amount
     @transactions << ["#{Time.new.strftime("%d/%m/%Y")}||  #{amount}||     || #{@balance}"]
@@ -29,5 +29,9 @@ class BankAccount
 
   def insufficient_funds_check(balance, amount)
     raise "Insufficient funds. Please input a new withdrawal amount of #{balance} or less." if amount > @balance
+  end
+
+  def positive_number_check(amount)
+    raise "Invalid entry. Try again." unless amount.to_i.positive?
   end
 end
