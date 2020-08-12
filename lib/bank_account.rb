@@ -1,4 +1,6 @@
+require_relative 'bank_statement'
 class BankAccount
+
   attr_reader :balance, :transactions
   
   def initialize
@@ -20,9 +22,7 @@ class BankAccount
   end
   
   def print_statement
-    @transactions.each do |transaction|
-      puts transaction
-    end
+    BankStatement.new.print(@transactions)
   end
 
   private
