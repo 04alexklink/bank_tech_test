@@ -1,6 +1,8 @@
 require '/bank_account'
+require '/bank_statement'
+
 describe BankAccount do 
-  let(:bankaccount) { BankAccount.new }
+  let(:bankaccount) { BankAccount.new(statement = BankStatement.new) }
 
   context 'initialisation of a new bank account' do
     it 'should be created with a starting balance of 0' do
