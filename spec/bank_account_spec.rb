@@ -50,7 +50,7 @@ describe BankAccount do
       bankaccount.deposit(2000)
       bankaccount.deposit(1000)
       bankaccount.withdraw(500)
-      expect(bankaccount.print_statement).to eq([["   date   ||credit||debit||balance"], ["11/08/2020||      || 2000|| 2000"], ["11/08/2020||      || 1000|| 3000"], ["11/08/2020||  500||     || 2500"]])
+      expect(bankaccount.print_statement).to eq([["   date   ||credit||debit||balance"], ["#{Time.new.strftime('%d/%m/%Y')}||      || 2000|| 2000"], ["#{Time.new.strftime('%d/%m/%Y')}||      || 1000|| 3000"], ["#{Time.new.strftime('%d/%m/%Y')}||  500||     || 2500"]])
     end
   end
 end

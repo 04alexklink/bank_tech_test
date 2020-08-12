@@ -1,5 +1,8 @@
 class BankStatement 
 
-  def print(statement)
+  def print(transactions)
+    transactions.each do |transaction|
+      puts transaction
+    end
   end
 end
