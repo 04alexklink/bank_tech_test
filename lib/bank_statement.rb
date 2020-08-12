@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BankStatement
   def print(transactions)
     transactions.each do |transaction|

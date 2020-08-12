@@ -39,3 +39,6 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 
 Step 1: Create spec file, rspec --init to create spec_helper.rb and .rspec, bundle init to create Gemfile. 
+Step 2: require simplecov and rubocop for test coverage and code quality
+Note: Related to simplecov, can type in terminal 'open coverage' which will open up the html file on the web displaying your coverage!
+Step 3: In the root, do touch .rubocop.yml which will create a file. 

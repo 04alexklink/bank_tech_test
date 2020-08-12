@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bank_statement'
 describe BankStatement do
   it 'prints a bankstatement' do
@@ -9,5 +11,4 @@ describe BankStatement do
     array = ['hello, goodmorning, goodday, goodnight']
     expect(bankstatement.print(array)).to eq(['hello, goodmorning, goodday, goodnight'])
   end
-  # test for print method taking no argument but using a defualt empty array or header
 end

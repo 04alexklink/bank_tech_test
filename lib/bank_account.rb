@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require_relative 'bank_statement'
+
 class BankAccount
   attr_reader :balance, :transactions, :statement
 
@@ -28,7 +31,9 @@ class BankAccount
   private
 
   def insufficient_funds_check(balance, amount)
-    raise "Insufficient funds. Please input a new withdrawal amount of #{balance} or less." if amount > @balance
+    if amount > @balance
+      raise "Insufficient funds. Please input a new withdrawal amount of #{balance} or less."
+    end
   end
 
   def positive_number_check(amount)
