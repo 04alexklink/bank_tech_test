@@ -31,7 +31,7 @@ class BankAccount
   private
 
   def insufficient_funds_check(balance, amount)
-    if amount > @balance
+    if amount > balance
       raise "Insufficient funds. Please input a new withdrawal amount of #{balance} or less."
     end
   end

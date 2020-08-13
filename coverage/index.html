@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-12T16:43:18+01:00">2020-08-12T16:43:18+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-13T21:02:07+01:00">2020-08-13T21:02:07+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  98.75%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.08
+         2.03
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>77</b> relevant lines,
-    <span class="green"><b>77</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>80</b> relevant lines,
+    <span class="green"><b>79</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  98.75%
 </span>
 )
   </div>
@@ -83,12 +83,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b3f0c0623a46aa10207e698229e231b4dcdf3ad9" class="src_link" title="lib/bank_statement.rb">lib/bank_statement.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="yellow strong cell--number t-file__coverage">87.50 %</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">0.88</td>
             
           </tr>
         
@@ -106,9 +106,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6fd76ba12e786bb35d131fa9a7b85424da364ce7" class="src_link" title="spec/bank_statement_spec.rb">spec/bank_statement_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">9</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -527,7 +527,7 @@
 
             
 
-            <code class="ruby">    if amount &gt; @balance</code>
+            <code class="ruby">    if amount &gt; balance</code>
           </li>
         </div>
       
@@ -628,8 +628,8 @@
   <div class="header">
     <h3>lib/bank_statement.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  87.5%
 </span>
 
       lines covered
@@ -638,9 +638,9 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>8</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
 
     
@@ -684,13 +684,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">  def print(transactions)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -701,7 +701,7 @@
 
             
 
-            <code class="ruby">    transactions.each do |transaction|</code>
+            <code class="ruby">  def print(transactions = [])</code>
           </li>
         </div>
       
@@ -712,18 +712,18 @@
 
             
 
-            <code class="ruby">      puts transaction</code>
+            <code class="ruby">    transactions.each do |transaction|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="missed" data-hits="0" data-linenumber="7">
             
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      puts transaction</code>
           </li>
         </div>
       
@@ -734,12 +734,100 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    return header</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def header</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    return &quot;date || credit || debit || balance&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -1514,8 +1602,8 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1577,7 +1665,7 @@
 
             
 
-            <code class="ruby">  it &#39;prints a bankstatement&#39; do</code>
+            <code class="ruby">  it &#39;prints only the statement header if not passed any transactions&#39; do</code>
           </li>
         </div>
       
@@ -1599,7 +1687,7 @@
 
             
 
-            <code class="ruby">    expect(bankstatement).to respond_to(:print).with(1).argument</code>
+            <code class="ruby">    expect(bankstatement.print).to eq(&quot;date || credit || debit || balance&quot;)</code>
           </li>
         </div>
       
@@ -1621,7 +1709,7 @@
 
             
 
-            <code class="ruby">  it &#39;prints out a each element of an array when provided with an array as an argument&#39; do</code>
+            <code class="ruby">  it &#39;prints a bankstatement&#39; do</code>
           </li>
         </div>
       
@@ -1643,23 +1731,12 @@
 
             
 
-            <code class="ruby">    array = [&#39;hello, goodmorning, goodday, goodnight&#39;]</code>
+            <code class="ruby">    expect(bankstatement).to respond_to(:print).with(1).argument</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(bankstatement.print(array)).to eq([&#39;hello, goodmorning, goodday, goodnight&#39;])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1670,7 +1747,62 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  # it &#39;prints out a each element of an array when provided with an array as an argument&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">  #   bankstatement = BankStatement.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">  #   array = [&#39;hello, goodmorning, goodday, goodnight&#39;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  #   expect(bankstatement.print(array)).to eq([&#39;hello, goodmorning, goodday, goodnight&#39;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
