@@ -2,7 +2,7 @@
 
 class BankStatement
 
-  def print(transactions = [])
+  def print_statement(transactions = [])
     transactions.each do |transaction|
       puts transaction
     end
@@ -10,7 +10,7 @@ class BankStatement
   end
 
   private 
-  
+
   def header
     return "date || credit || debit || balance"
   end

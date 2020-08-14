@@ -3,25 +3,25 @@
 require_relative 'bank_statement'
 
 class BankAccount
-  attr_reader :balance, :transactions, :statement
+  attr_reader :balance, :transactions
 
   def initialize(statement = BankStatement.new)
     @balance = 0
-    @transactions = [['   date   ||credit||debit||balance']]
+    @transactions = []
     @statement = statement
   end
 
-  def deposit(amount)
-    positive_number_check(amount)
-    @balance += amount
-    @transactions << ["#{Time.new.strftime('%d/%m/%Y')}||      || #{amount}|| #{@balance}"]
+  def deposit(credit, date = Time.new.strftime('%d/%m/%Y'))
+    positive_number_check(credit)
+    @balance += credit
+    store_transaction(date, credit, 0, balance)
   end
 
-  def withdraw(amount)
-    positive_number_check(amount)
-    insufficient_funds_check(@balance, amount)
-    @balance -= amount
-    @transactions << ["#{Time.new.strftime('%d/%m/%Y')}||  #{amount}||     || #{@balance}"]
+  def withdraw(debit, date = Time.new.strftime('%d/%m/%Y'))
+    positive_number_check(debit)
+    insufficient_funds_check(@balance, debit)
+    @balance -= debit
+    store_transaction(date, 0, debit, balance)
   end
 
   def print_statement
@@ -38,5 +38,9 @@ class BankAccount
 
   def positive_number_check(amount)
     raise 'Invalid entry. Try again.' unless amount.to_i.positive?
+  end
+  
+  def store_transaction(date, credit, debit, balance)
+    @transactions << {:date => date, :credit => credit, :debit => debit, :balance => balance} 
   end
 end
