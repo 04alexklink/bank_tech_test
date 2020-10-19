@@ -2,17 +2,21 @@
 
 require 'bank_statement'
 describe BankStatement do
-  it 'prints only the statement header if not passed any transactions' do
-    bankstatement = BankStatement.new
-    expect(bankstatement.print_statement).to eq("date || credit || debit || balance")
+  describe 'Print Statement Method:' do
+
+    it 'prints only the statement header if not passed any transactions' do
+      bankstatement = BankStatement.new
+      expect(bankstatement.print_statement).to eq(["date || credit || debit || balance"])
+    end
+    it 'prints statement lines when provided with an array of hashes' do
+      bankstatement = BankStatement.new
+      input = [{:date => '15/01/2018', :credit => 5, :debit => 0, :balance => 5}]
+      expect(bankstatement.print_statement(input)).to eq(['date || credit || debit || balance', '15/01/2018 || 5.00 ||  || 5.00'])
+    end
+    it 'prints statement lines correctly' do
+      bankstatement = BankStatement.new
+      input = [{:date => '16/01/2018', :credit => 0, :debit => 2, :balance => 5},{:date => '15/01/2018', :credit => 5, :debit => 0, :balance => 5}]
+      expect(bankstatement.print_statement(input)).to eq(['date || credit || debit || balance', '15/01/2018 || 5.00 ||  || 5.00'])
+    end
   end
-  it 'prints a bankstatement' do
-    bankstatement = BankStatement.new
-    expect(bankstatement).to respond_to(:print_statement).with(1).argument
-  end
-  # it 'prints out a each element of an array when provided with an array as an argument' do
-  #   bankstatement = BankStatement.new
-  #   array = ['hello, goodmorning, goodday, goodnight']
-  #   expect(bankstatement.print(array)).to eq(['hello, goodmorning, goodday, goodnight'])
-  # end
 end
